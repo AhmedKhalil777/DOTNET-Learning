@@ -1,0 +1,22 @@
+@model List<MyWebApp.Models.Transformer>
+<html>
+    <body>
+        <h1>Roles in Transformer Movie</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Color</th>
+            </tr>
+            @foreach(var t in Model){
+            <tr>
+                <td>@t.ID</td>
+                <td>@t.Name</td>
+                <td>@t.Location</td>
+                <td>@t.Color</td>
+            </tr>
+            }
+        </table>
+    </body>
+</html>

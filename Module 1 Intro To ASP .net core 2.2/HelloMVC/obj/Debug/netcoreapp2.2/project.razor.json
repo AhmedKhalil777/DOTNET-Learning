@@ -1,0 +1,15 @@
+{
+  "FilePath": "d:\\Projects\\1- EDX ASP MVCCore2\\HelloMVC\\HelloMVC.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": null,
+  "RootNamespace": "HelloMVC",
+  "Documents": []
+}

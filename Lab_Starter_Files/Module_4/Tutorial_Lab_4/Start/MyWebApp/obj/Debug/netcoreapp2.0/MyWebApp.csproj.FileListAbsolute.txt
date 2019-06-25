@@ -1,0 +1,10 @@
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.deps.json
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.json
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.dev.json
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.pdb
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.csproj.CoreCompileInputs.cache
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfoInputs.cache
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfo.cs
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Sources\edX\Courses\002\Labs\Lab 013 - Partial View\Finish\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.pdb

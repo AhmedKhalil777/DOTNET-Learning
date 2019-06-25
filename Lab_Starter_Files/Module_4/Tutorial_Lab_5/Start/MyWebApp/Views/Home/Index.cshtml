@@ -1,0 +1,20 @@
+@model IList<MyWebApp.Models.Country>
+<html>
+    <h1>Country List</h1>
+    <table border="1">
+        <tr>
+            <th>Nation Flag</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Continent</th>
+        </tr>
+        @foreach(var c in Model){
+            <tr>
+                <td><img src="@c.NationalFlagPath"/></td>
+                <td>@c.Code</td>
+                <td>@c.Name</td>
+                <td>@c.Continent</td>
+            </tr>
+        }
+    </table>
+</html>

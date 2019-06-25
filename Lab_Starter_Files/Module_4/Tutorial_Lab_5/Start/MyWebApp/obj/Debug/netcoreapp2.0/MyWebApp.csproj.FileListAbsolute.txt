@@ -1,0 +1,20 @@
+c:\Users\Timothy\Desktop\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.deps.json
+c:\Users\Timothy\Desktop\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.json
+c:\Users\Timothy\Desktop\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.dev.json
+c:\Users\Timothy\Desktop\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Users\Timothy\Desktop\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.pdb
+c:\Users\Timothy\Desktop\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.csproj.CoreCompileInputs.cache
+c:\Users\Timothy\Desktop\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfoInputs.cache
+c:\Users\Timothy\Desktop\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfo.cs
+c:\Users\Timothy\Desktop\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Users\Timothy\Desktop\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.pdb
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.deps.json
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.json
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.runtimeconfig.dev.json
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\bin\Debug\netcoreapp2.0\MyWebApp.pdb
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.csproj.CoreCompileInputs.cache
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfoInputs.cache
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.AssemblyInfo.cs
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.dll
+c:\Sources\edX\Courses\002\Labs\Lab 014 - Uploading Files\Start\MyWebApp\obj\Debug\netcoreapp2.0\MyWebApp.pdb

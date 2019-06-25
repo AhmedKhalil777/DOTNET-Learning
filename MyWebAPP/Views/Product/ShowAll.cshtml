@@ -1,0 +1,27 @@
+@model List<MyWebAPP.Models.Product>
+
+<html>
+    <body>
+      <h1>@ViewData["Heading"]</h1>
+      <table>
+          <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Price</td>
+          </tr>
+          @foreach (var item in Model)
+          {
+              <tr>
+                  <td>@item.ID</td>
+                  <td>@item.Name</td>
+                  <td>@item.Price</td>
+
+
+              </tr>
+          }
+      </table>
+
+
+
+    </body>
+</html>

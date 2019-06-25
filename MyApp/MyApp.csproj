@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Entityframeworkcore.Design" Version="2.2.4" />
+    <DotNetCliToolReference Include="Microsoft.Entityframeworkcore.Tools.Dotnet" Version="2.0.3" />
+    <PackageReference Include="pomelo.entityframeworkcore.mysql" Version="2.2.0" />
+    <Compile Include=".\Models\*" />
+  </ItemGroup>
+
+</Project>
