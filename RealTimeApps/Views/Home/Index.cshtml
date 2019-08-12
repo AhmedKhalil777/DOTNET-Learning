@@ -1,0 +1,23 @@
+﻿@page
+
+<div class="container-fluid">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+            <input type="text" id="userInput" placeholder="User Name" style="width:100%" class="text-dark"/>
+            <input type="text" id="messageInput" placeholder="Your Message" style="width:100%" class="text-dark" />
+            <input type="button" id="sendButton" value="Send Message"  class="btn-dark"/>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+            <ul id="messageList"></ul>
+        </div>
+
+    </div>
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/cat.js"></script>
