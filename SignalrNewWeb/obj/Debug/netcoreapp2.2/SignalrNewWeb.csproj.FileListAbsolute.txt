@@ -1,0 +1,14 @@
+D:\Projects\DOTNET-Learning\SignalrNewWeb\bin\Debug\netcoreapp2.2\SignalrNewWeb.deps.json
+D:\Projects\DOTNET-Learning\SignalrNewWeb\bin\Debug\netcoreapp2.2\SignalrNewWeb.runtimeconfig.json
+D:\Projects\DOTNET-Learning\SignalrNewWeb\bin\Debug\netcoreapp2.2\SignalrNewWeb.runtimeconfig.dev.json
+d:\Projects\DOTNET-Learning\SignalrNewWeb\bin\Debug\netcoreapp2.2\SignalrNewWeb.dll
+d:\Projects\DOTNET-Learning\SignalrNewWeb\bin\Debug\netcoreapp2.2\SignalrNewWeb.pdb
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.csprojAssemblyReference.cache
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.csproj.CoreCompileInputs.cache
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.RazorAssemblyInfo.cache
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.RazorAssemblyInfo.cs
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.AssemblyInfoInputs.cache
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.AssemblyInfo.cs
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.RazorTargetAssemblyInfo.cache
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.dll
+d:\Projects\DOTNET-Learning\SignalrNewWeb\obj\Debug\netcoreapp2.2\SignalrNewWeb.pdb
