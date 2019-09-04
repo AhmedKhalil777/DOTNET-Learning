@@ -1,2 +1,5 @@
-./vs
-/RealTimeApps/.vs
+**/.vs
+**/node_modules
+**/bin
+**/obj
+**/vscode
