@@ -53,3 +53,69 @@
    - it just contain a list of Dependancies
    - there are a version number and if the the version is not edited => implicitly version specified by the sdk
    - Microsoft Support not editing it (rely)
+---
+## Main Function 
+![](pic/4.PNG)
+
+ - ### Why in Asp.net core there are main method :
+   - Asp.net core start as a console app ,so we have main method
+   - the entry point of the web app and make it web app
+   ---
+ - The Main Function Has a line of code 
+  ```
+          public static void Main(string[] args)
+        {
+            CreateWebHostBuilder(args).Build().Run();
+        }
+  ```
+ -  the createwebhosbuilder method call createdefaultbuilder that create the configuration of web host application and then complet __the specified configuration from Startup Class__
+
+
+## StartUp class have 2 methods :
+
+ - __ConfigureServices__ 
+   - This method gets called by the runtime.
+   - Use this method to add services to the __container__.
+ - __Configure__
+   - This method gets called by the runtime. 
+   - Use this method to configure the HTTP request pipeline.
+---
+## In Process Hosting :
+ ### some of the CreateDefaultBuilder() Tasks : 
+  - Setting Up the web server 
+  - loading the host and application configuration from different sources
+  - Configuring Logging
+ ### InProcess Uses the CreateDefaultBuilder()
+ -  to use function UseIIS() Behind the scene of Worker process(w3wp.exe or IIS express.exe).
+ - Inprocess hosting has throughputs higher than outofProcess model
+ - There are one server to run the app
+ ![](pic/7.PNG)
+
+ ### lets now use our web app to show what is the process running to run app 
+  - go to startup class 
+  ![](pic/1.PNG)
+  - in Run Method we gonna change the query to the Current process name
+  ![](pic/2.PNG)
+  - Then Run ... Its IISexpress
+  ![](pic/5.PNG)
+---
+ ## OutOF Process Has 2 Servers 
+  - Internal web server __Kestrel__
+  - External web server __IIS , Nginx , Apache__
+ > If you need to change to  out of Process 
+   - delete the Aspnetcorehosting Model Item from CSPROJ
+   - or Change its value to OutOfProcess
+   ![](pic/8.PNG)
+
+---
+ ## What is Kestrel 
+  - A cross-Platform web server for running  Asp.net core
+  - Can be used by itself , as an edge server
+  - the process used to run application is called __dotnet.exe__
+  - Using the dotnet process by (CLI or PowerShell or any another Command support ) in the same proj Directory
+  ![](pic/6.PNG)
+  ![](pic/9.PNG)
+  ![](pic/10.PNG)
+  - and if it's Inprocess and run the app from CLI the Server will be Kestrel (OutOfProcess)
+---
+![](pic/11.PNG)
