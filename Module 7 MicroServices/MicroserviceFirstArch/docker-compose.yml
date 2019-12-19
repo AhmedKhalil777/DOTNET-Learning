@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  blog.api:
+    image: ${DOCKER_REGISTRY-}blogapi
+    build:
+      context: .
+      dockerfile: Blog.Api/Dockerfile
+
+  chatting.api:
+    image: ${DOCKER_REGISTRY-}chattingapi
+    build:
+      context: .
+      dockerfile: Chatting.Api/Dockerfile
+

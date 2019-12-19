@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  blog.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "83"
+
+  chatting.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "84"
+
