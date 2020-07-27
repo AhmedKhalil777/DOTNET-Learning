@@ -4,14 +4,16 @@ using GraphQL.Sample.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GraphQL.Sample.API.Migrations
 {
     [DbContext(typeof(RealEstateDbContext))]
-    partial class RealEstateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200727134026_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,7 @@ namespace GraphQL.Sample.API.Migrations
                     b.Property<DateTime>("OverDueDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PropertyId")
+                    b.Property<int>("PropertyId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
@@ -77,9 +79,11 @@ namespace GraphQL.Sample.API.Migrations
 
             modelBuilder.Entity("GraphQL.Sample.Database.Model.Payment", b =>
                 {
-                    b.HasOne("GraphQL.Sample.Database.Model.Property", null)
+                    b.HasOne("GraphQL.Sample.Database.Model.Property", "Property")
                         .WithMany("Payments")
-                        .HasForeignKey("PropertyId");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
