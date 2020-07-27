@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace GraphQL.Sample.API
 {
@@ -36,8 +37,8 @@ namespace GraphQL.Sample.API
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddScoped<PropertyQuery>();
             services.AddSingleton<PropertyType>();
-            var sp = services.BuildServiceProvider();
-            services.AddSingleton<ISchema>(new RealEstateSchema(new FuncDependencyResolver(type => sp.GetService(type))));
+            services.AddScoped<ISchema>(x =>new RealEstateSchema(new FuncDependencyResolver(x.GetRequiredService)));
+    
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

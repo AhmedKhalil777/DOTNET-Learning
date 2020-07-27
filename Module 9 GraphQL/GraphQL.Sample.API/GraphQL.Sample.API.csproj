@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="graphiql" Version="2.0.0" />
     <PackageReference Include="GraphQL" Version="2.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
@@ -17,6 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\GraphQL.Sample.DataAccess\GraphQL.Sample.DataAccess.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Database\GraphQL.Sample.Database.csproj" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="GraphQL.Server.Ui.Playground" Version="3.4.0" />
     <ProjectReference Include="..\GraphQL.Sample.Utilities\GraphQL.Sample.Utilities.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Types\GraphQL.Sample.Types.csproj" />
   </ItemGroup>
