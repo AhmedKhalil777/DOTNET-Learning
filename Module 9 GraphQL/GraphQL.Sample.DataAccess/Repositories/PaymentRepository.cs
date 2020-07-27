@@ -1,19 +1,25 @@
 ﻿using GraphQL.Sample.DataAccess.Repositories.Contracts;
+using GraphQL.Sample.Database;
 using GraphQL.Sample.Database.Model;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GraphQL.Sample.DataAccess.Repositories
 {
     public class PaymentRepository : IPaymentRepository
     {
-        public IEnumerable<Payment> GetAllPayments()
+        private readonly RealEstateDbContext _db;
+        public PaymentRepository(RealEstateDbContext db)
         {
-            throw new System.NotImplementedException();
+            _db = db;
         }
+        public IEnumerable<Payment> GetAllPaymentsProperty(int PropertyID) => _db.Payments.Where(x => x.PropertyId == PropertyID).ToList();
 
-        public IEnumerable<Payment> GetAllPaymentsOfProperty(int PropertyID, int LastPayments)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IEnumerable<Payment> GetAllPaymentsProperty(int PropertyID, int LastPayments) => _db.Payments
+            .Where(x => x.PropertyId == PropertyID)
+            .OrderByDescending(x => x.IssueDate)
+            .Take(LastPayments)
+            .ToList();
     }
 }

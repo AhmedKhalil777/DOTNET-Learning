@@ -32,11 +32,13 @@ namespace GraphQL.Sample.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddControllers();
             services.AddDbContext<RealEstateDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:RealEstateDb"]));
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddScoped<PropertyQuery>();
-            services.AddSingleton<PropertyType>();
+            services.AddScoped<PropertyType>();
+            services.AddScoped<PaymentType>();
             services.AddScoped<ISchema>(x =>new RealEstateSchema(new FuncDependencyResolver(x.GetRequiredService)));
     
         }

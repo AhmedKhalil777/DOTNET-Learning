@@ -7,8 +7,8 @@ namespace GraphQL.Sample.DataAccess.Repositories.Contracts
 {
     public interface IPaymentRepository
     {
-        IEnumerable<Payment> GetAllPayments();
-        IEnumerable<Payment> GetAllPaymentsOfProperty(int PropertyID, int LastPayments);
+        IEnumerable<Payment> GetAllPaymentsProperty(int PropertyID);
+        IEnumerable<Payment> GetAllPaymentsProperty(int PropertyID, int LastPayments);
 
     }
 }
