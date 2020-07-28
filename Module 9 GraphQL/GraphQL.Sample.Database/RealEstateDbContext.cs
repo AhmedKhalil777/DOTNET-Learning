@@ -1,8 +1,5 @@
 ﻿using GraphQL.Sample.Database.Model;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GraphQL.Sample.Database
 {

@@ -12,9 +12,14 @@ namespace GraphQL.Sample.API.Queries
     {
         public PropertyQuery(IPropertyRepository propertyRepository)
         {
-            Field<ListGraphType<PropertyType>>(
-                "Properties",
+            Field<ListGraphType<PropertyQueryType>>(
+                "properties",
                 resolve: context => propertyRepository.GetAll());
+            Field<PropertyQueryType>(
+                "property",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id" }),
+                resolve: context => propertyRepository.GetProperty(context.GetArgument<int>("id"))
+                );
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GraphQL.Sample.API.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,7 +34,7 @@ namespace GraphQL.Sample.API.Migrations
                     IssueDate = table.Column<DateTime>(nullable: false),
                     OverDueDate = table.Column<DateTime>(nullable: false),
                     IsPaid = table.Column<bool>(nullable: false),
-                    PropertyId = table.Column<int>(nullable: true)
+                    PropertyId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +44,7 @@ namespace GraphQL.Sample.API.Migrations
                         column: x => x.PropertyId,
                         principalTable: "Properties",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

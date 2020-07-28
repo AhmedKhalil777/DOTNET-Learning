@@ -1,4 +1,5 @@
 using GraphiQl;
+using GraphQL.Sample.API.Mutations;
 using GraphQL.Sample.API.Queries;
 using GraphQL.Sample.API.Schemas;
 using GraphQL.Sample.DataAccess.Repositories;
@@ -6,16 +7,15 @@ using GraphQL.Sample.DataAccess.Repositories.Contracts;
 using GraphQL.Sample.Database;
 using GraphQL.Sample.Database.DataSeed;
 using GraphQL.Sample.Types;
+using GraphQL.Sample.Types.Mutations;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+
 
 namespace GraphQL.Sample.API
 {
@@ -31,12 +31,17 @@ namespace GraphQL.Sample.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddTransient<IPropertyRepository, PropertyRepository>();
+            services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddControllers();
             services.AddDbContext<RealEstateDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:RealEstateDb"]));
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddScoped<PropertyQuery>();
-            services.AddSingleton<PropertyType>();
+            services.AddScoped<PropertyMutation>();
+            services.AddScoped<PropertyInputType>();
+            services.AddScoped<PropertyQueryType>();
+            services.AddScoped<PaymentQueryType>();
             services.AddScoped<ISchema>(x =>new RealEstateSchema(new FuncDependencyResolver(x.GetRequiredService)));
     
         }
@@ -49,8 +54,9 @@ namespace GraphQL.Sample.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseGraphiQl("/graphql");
             app.UseHttpsRedirection();
-            app.UseGraphiQl();
+
             db.EnsureDataSeeding();
             app.UseRouting();
 

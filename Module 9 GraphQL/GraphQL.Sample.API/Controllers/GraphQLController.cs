@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Concurrency;
-using System.Threading.Tasks;
+﻿using Bogus.DataSets;
 using GraphQL.Sample.Utilities;
 using GraphQL.Types;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GraphQL.Sample.API.Controllers
 {
@@ -23,11 +22,14 @@ namespace GraphQL.Sample.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] GraphQLQuery query)
+        public async Task<IActionResult> Post([FromBody] System.Text.Json.JsonElement rawQuery)
         {
+
+            string rawJson = rawQuery.ToString();
+            var query = JsonConvert.DeserializeObject<GraphQLQuery>(rawJson);
             if (query == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(query));
             }
             var inputs = query.Variables?.ToInputs();
             var executionOptions = new ExecutionOptions()
@@ -37,12 +39,13 @@ namespace GraphQL.Sample.API.Controllers
                 Inputs = inputs
 
             };
+
             var result = await _documentExecuter.ExecuteAsync(executionOptions);
             if (result.Errors?.Count() >0)
             {
-                return BadRequest(result);
+                return BadRequest(result.Errors);
             }
-            return Ok(result);
+            return Ok(result.Data);
 
         }
     }

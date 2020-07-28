@@ -1,9 +1,8 @@
 ﻿using GraphQL.Sample.DataAccess.Repositories.Contracts;
 using GraphQL.Sample.Database;
 using GraphQL.Sample.Database.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace GraphQL.Sample.DataAccess.Repositories
 {
@@ -14,7 +13,16 @@ namespace GraphQL.Sample.DataAccess.Repositories
         {
             _db = db;
         }
+
+        public Property AddProperty(Property property)
+        {
+            _db.Properties.Add(property);
+            _db.SaveChanges();
+            return property;
+        }
+
         public IEnumerable<Property> GetAll() => _db.Properties;
-       
+
+        public Property GetProperty(int PropertyId) => _db.Properties.FirstOrDefault(x => x.Id == PropertyId);
     }
 }

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Sample.DataAccess\GraphQL.Sample.DataAccess.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Database\GraphQL.Sample.Database.csproj" />
   </ItemGroup>
 
