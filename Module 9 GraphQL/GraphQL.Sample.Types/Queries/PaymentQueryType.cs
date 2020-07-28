@@ -3,9 +3,9 @@ using GraphQL.Types;
 
 namespace GraphQL.Sample.Types
 {
-    public class PaymentType : ObjectGraphType<Payment>
+    public class PaymentQueryType : ObjectGraphType<Payment>
     {
-        public PaymentType()
+        public PaymentQueryType()
         {
             Field(x => x.Id);
             Field(x => x.Value);

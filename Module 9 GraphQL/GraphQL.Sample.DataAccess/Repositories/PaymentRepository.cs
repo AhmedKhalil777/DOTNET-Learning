@@ -1,7 +1,6 @@
 ﻿using GraphQL.Sample.DataAccess.Repositories.Contracts;
 using GraphQL.Sample.Database;
 using GraphQL.Sample.Database.Model;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -1,15 +1,12 @@
 ﻿using GraphQL.Sample.DataAccess.Repositories.Contracts;
 using GraphQL.Sample.Database.Model;
 using GraphQL.Types;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GraphQL.Sample.Types
 {
-    public class PropertyType : ObjectGraphType<Property>
+    public class PropertyQueryType : ObjectGraphType<Property>
     {
-        public PropertyType(IPaymentRepository paymentRepository)
+        public PropertyQueryType(IPaymentRepository paymentRepository)
         {
             Field(x => x.Id);
             Field(x => x.Name);
@@ -17,7 +14,7 @@ namespace GraphQL.Sample.Types
             Field(x => x.City);
             Field(x => x.Street);
             Field(x => x.Family);
-            Field<ListGraphType<PaymentType>>(
+            Field<ListGraphType<PaymentQueryType>>(
                 "payments",
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name ="last"}),
                 resolve: context => {
