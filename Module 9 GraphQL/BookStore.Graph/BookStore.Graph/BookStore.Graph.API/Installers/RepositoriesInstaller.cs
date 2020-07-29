@@ -24,6 +24,7 @@ namespace BookStore.Graph.API.Installers
             services.AddSingleton<IDocumentWriter, DocumentWriter>();
             services.AddScoped<BookStoreQuery>();
             services.AddScoped<PostType>();
+            services.AddScoped<UserType>();
             services.AddScoped<CommentType>();
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new BookStoreSchema(new FuncDependencyResolver(type => sp.GetService(type))));

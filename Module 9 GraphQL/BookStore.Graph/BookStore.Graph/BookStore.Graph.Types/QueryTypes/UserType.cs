@@ -1,5 +1,4 @@
-﻿using BookStore.Graph.Database.Domain;
-using BookStore.Graph.Database.Domain.Contracts;
+﻿using BookStore.Graph.Database.Domain.Contracts;
 using GraphQL.Types;
 
 
@@ -9,15 +8,15 @@ namespace BookStore.Graph.Types.QueryTypes
     {
         public UserType()
         {
-            //Field<StringGraphType>("Id",
-            //    resolve: context => context.Source.Id.ToString()
-            //    );
+            Field<StringGraphType>("id",
+                resolve: context => context.Source.Id.ToString()
+                );
             Field(x => x.UserName).Description("Username");
-            //Field(x => x.Email);
-            //Field(x => x.Image);
-            //Field(x => x.PhoneNumber);
-            //Field(x => x.City);
-            //Field(x => x.street);
+            Field(x => x.Email);
+            Field(x => x.Image);
+            Field(x => x.PhoneNumber);
+            Field(x => x.City);
+            Field(x => x.street);
         }
     }
 }

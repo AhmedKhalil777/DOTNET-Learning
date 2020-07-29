@@ -1,4 +1,5 @@
 ﻿using BookStore.Graph.Database.Domain;
+using BookStore.Graph.Database.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +10,6 @@ namespace BookStore.Graph.DataAccess.Repositories.Contracts
     {
         IEnumerable<Post> GetPosts();
         IEnumerable<Comment> GetCommentsOfPost(Guid PostId);
-        AppUser GetIssuerOfPost(Guid PostId);
+        AppGraphUser GetIssuerOfPost(string PostId);
     }
 }
