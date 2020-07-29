@@ -1,4 +1,6 @@
 ﻿using GraphiQl;
+using GraphQL;
+using GraphQL.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -16,7 +18,8 @@ namespace BookStore.Graph.API.Installers
                 );
 
             ConfigureGraphQl(services);
-
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            services.AddSingleton<IDocumentWriter, DocumentWriter>();
         }
     }
 }

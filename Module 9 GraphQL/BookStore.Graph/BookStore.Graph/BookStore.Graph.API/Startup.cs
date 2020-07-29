@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookStore.Graph.API.Installers;
+using BookStore.Graph.API.Middlewares;
+using BookStore.Graph.API.Schemas;
 using BookStore.Graph.Database;
 using BookStore.Graph.Database.DataSeeders;
 using BookStore.Graph.Database.Domain;
 using GraphiQl;
+using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +36,7 @@ namespace BookStore.Graph.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.InstallServicesInAssemblies(Configuration);
         }
 
@@ -46,8 +50,14 @@ namespace BookStore.Graph.API
             
             app.UseHttpsRedirection();
 
-            app.UseGraphiQl("/GraphQL");
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions { GraphQLEndPoint = GraphQlPath, Path ="/GraphQL"});
+
+            ////app.UseGraphQLWebSocket<BookStoreSchema>(new GraphQLWebSocketsOptions());
+            ////app.UseGraphQLHttp<BookStoreSchema>(new GraphQLHttpOptions());
+            //app.Map("/schema.graphql", config => config.UseMiddleware<SchemaMiddleware>());
+
             app.UseRouting();
+
 
             app.UseAuthorization();
 
@@ -57,7 +67,9 @@ namespace BookStore.Graph.API
             });
 
             userManager.SeedData(db);
- 
+
+    
+
         }
     }
 }

@@ -4,8 +4,10 @@ using GraphQL.Types;
 
 namespace BookStore.Graph.API.Queries
 {
+    [GraphQL.GraphQLMetadata("BookStore")]
     public class BookStoreQuery : ObjectGraphType
     {
+        
         public BookStoreQuery(IPostService postService)
         {
             Field<ListGraphType<PostType>>(
