@@ -8,5 +8,7 @@ namespace BookStore.Graph.DataAccess.Repositories.Contracts
     public interface IPostService
     {
         IEnumerable<Post> GetPosts();
+        IEnumerable<Comment> GetCommentsOfPost(Guid PostId);
+        AppUser GetIssuerOfPost(Guid PostId);
     }
 }
