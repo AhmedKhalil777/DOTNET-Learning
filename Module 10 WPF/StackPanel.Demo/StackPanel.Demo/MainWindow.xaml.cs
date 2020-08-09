@@ -24,5 +24,66 @@ namespace StackPanel.Demo
         {
             InitializeComponent();
         }
+
+        private void ApplyButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(DescriptionText.Text);
+
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            WeldCheckBox.IsChecked =
+         AssemblyCheckBox.IsChecked =
+         PlasmaCheckBox.IsChecked =
+         LaserCheckBox.IsChecked =
+         PurchaceCheckBox.IsChecked =
+         LatheCheckBox.IsChecked =
+         DrillCheckBox.IsChecked =
+         FoldCheckBox.IsChecked =
+         RollCheckBox.IsChecked =
+         SawCheckBox.IsChecked = false;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            
+            var checkBox = (CheckBox)sender;
+            if (checkBox.IsChecked == true)
+            {
+                int x =int.Parse(LengthTextBox.Text);
+                LengthTextBox.Text = (++x).ToString();
+            }
+            else
+            {
+                int x = int.Parse(LengthTextBox.Text);
+                LengthTextBox.Text = (--x).ToString();
+            }
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+                int x = int.Parse(LengthTextBox.Text);
+                LengthTextBox.Text = (--x).ToString();
+           
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (NoteText == null)
+            {
+                return;
+            }
+            var compo = (ComboBox)sender;
+            var selected = (ComboBoxItem)compo.SelectedValue;
+            NoteText.Text = (string)selected.Content;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ComboBox_SelectionChanged(RubberingCombo, null);
+        }
     }
 }
