@@ -1,13 +1,10 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
+﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using TreeViews.Demo.Contracts;
+using TreeViews.Demo.Processors;
 
 namespace TreeViews.Demo
 {
@@ -19,27 +16,11 @@ namespace TreeViews.Demo
       
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var image = "file.png";
 
+
+            string image = (string)value;
             
-            var path = (string)value;
-            var name = MainWindow.GetFileFolderName(path);
-            if (path == null)
-                return null;
-            if (string.IsNullOrEmpty(name))
-            {
-                image = "Drive.png";
-            }
-            else if(path == "Open")
-            {
-                image = "folderOpen.png";
-            }
-            else if(new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
-            {
-                image = "folder.png";
-            }
-            
-            return new BitmapImage(new Uri($"E://Projects//DOTNET-Learning//Module 10 WPF//TreeViews.Demo//TreeViews.Demo//Images//{image}"));
+            return new BitmapImage(new Uri($"/Images/{image}.png" , UriKind.Relative));
 
         }
 
