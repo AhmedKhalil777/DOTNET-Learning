@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "myfirst.console": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Projects\\DOTNET-Learning\\C#\\myfirst\\myfirst.console\\bin\\Debug\\netcoreapp3.1\\myfirst.console.exe",
+      "workingDirectory": "C:\\Users\\ProgE\\Desktop"
+    }
+  }
+}
