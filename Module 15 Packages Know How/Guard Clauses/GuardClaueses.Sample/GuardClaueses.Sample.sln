@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardClaueses.Sample", "GuardClaueses.Sample\GuardClaueses.Sample.csproj", "{A98338D5-D319-4262-94C8-3A9CC85D95A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A98338D5-D319-4262-94C8-3A9CC85D95A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98338D5-D319-4262-94C8-3A9CC85D95A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98338D5-D319-4262-94C8-3A9CC85D95A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98338D5-D319-4262-94C8-3A9CC85D95A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB10F762-C9CD-41D3-AF4A-A667E84B8BF5}
+	EndGlobalSection
+EndGlobal
