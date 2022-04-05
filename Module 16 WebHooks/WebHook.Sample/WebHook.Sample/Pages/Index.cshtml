@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section scripts{
+    <script>
+        const list = document.querySelector('ul.results');
+        const getAll = document.getElementById('post-Hello');
+
+        getAll.addEventListener('click', () => {
+            sendHello();
+        });
+
+        const sendHello = () => {
+            fetch("/webhooks/hello", {
+                method: 'post',
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify({ Name: document.getElementById("Name").value })
+            })
+                .then(response => response.json())
+                .then(res => {
+                    console.log(res);
+                    let item = document.createElement('li');
+                    item.innerText = res.greeting;
+                    list.appendChild(item);
+                });
+        }
+    </script>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <input asp-for="Name" class="form-control">
+    <button class="btn btn-primary" id="post-Hello">Send Hello</button>
+    <ul class="results mt-3">
+    </ul>
+</div>
