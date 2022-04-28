@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTPServer", "HTTPServer\HTTPServer.csproj", "{CFF13B29-25E0-43F9-B6B8-1154411B6843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientBrowser", "ClientBrowser\ClientBrowser.csproj", "{8D264E02-7997-470C-9E23-6369EFBF9D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientConsole\ClientConsole.csproj", "{AC0A8D97-85D0-416A-8F58-AF6BC13783FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFF13B29-25E0-43F9-B6B8-1154411B6843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF13B29-25E0-43F9-B6B8-1154411B6843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF13B29-25E0-43F9-B6B8-1154411B6843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF13B29-25E0-43F9-B6B8-1154411B6843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D264E02-7997-470C-9E23-6369EFBF9D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D264E02-7997-470C-9E23-6369EFBF9D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D264E02-7997-470C-9E23-6369EFBF9D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D264E02-7997-470C-9E23-6369EFBF9D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0A8D97-85D0-416A-8F58-AF6BC13783FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0A8D97-85D0-416A-8F58-AF6BC13783FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0A8D97-85D0-416A-8F58-AF6BC13783FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0A8D97-85D0-416A-8F58-AF6BC13783FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
