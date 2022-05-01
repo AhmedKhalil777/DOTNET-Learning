@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPClientSide", "UDPClient\UDPClientSide.csproj", "{0DEBE68B-7983-4B9F-A0C9-770356CBF5F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPServerSide", "UDPServerSide\UDPServerSide.csproj", "{1418C29B-18B6-4033-8014-75A5893BC278}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DEBE68B-7983-4B9F-A0C9-770356CBF5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEBE68B-7983-4B9F-A0C9-770356CBF5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEBE68B-7983-4B9F-A0C9-770356CBF5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEBE68B-7983-4B9F-A0C9-770356CBF5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1418C29B-18B6-4033-8014-75A5893BC278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1418C29B-18B6-4033-8014-75A5893BC278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1418C29B-18B6-4033-8014-75A5893BC278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1418C29B-18B6-4033-8014-75A5893BC278}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

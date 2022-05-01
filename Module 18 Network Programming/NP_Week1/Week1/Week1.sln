@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStream", "FileStream\FileStream.csproj", "{548ED05C-F9FB-4D11-92F8-97DCD5F209A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{020CF9FB-8FAE-448C-AE8F-2C0159E3C24C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIP", "FindIP\FindIP\FindIP.csproj", "{5B8840DE-0BC4-46BD-B5A1-E789A0C4725F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{548ED05C-F9FB-4D11-92F8-97DCD5F209A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548ED05C-F9FB-4D11-92F8-97DCD5F209A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548ED05C-F9FB-4D11-92F8-97DCD5F209A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548ED05C-F9FB-4D11-92F8-97DCD5F209A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020CF9FB-8FAE-448C-AE8F-2C0159E3C24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020CF9FB-8FAE-448C-AE8F-2C0159E3C24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020CF9FB-8FAE-448C-AE8F-2C0159E3C24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020CF9FB-8FAE-448C-AE8F-2C0159E3C24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8840DE-0BC4-46BD-B5A1-E789A0C4725F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8840DE-0BC4-46BD-B5A1-E789A0C4725F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8840DE-0BC4-46BD-B5A1-E789A0C4725F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8840DE-0BC4-46BD-B5A1-E789A0C4725F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
