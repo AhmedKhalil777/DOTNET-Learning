@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ZooHub.Client";
+
+package zoo;
+
+// The Zoo service definition.
+service Zoo {
+  // Sends a greeting
+  rpc GetZooAnimals (ZooRequest) returns (AnimalResponse);
+}
+
+// The request message containing the animalId.
+message ZooRequest {
+  int32 animalId = 1;
+}
+
+message AnimalResponse {
+	repeated Animal animals =1; 
+}
+
+
+// The response message containing the Animal.
+message Animal {
+  int32 id = 1;
+  string name = 2;
+  string class =3;
+}

@@ -1,0 +1,6 @@
+name: zoo
+services:
+- name: zooClient
+  project: ZooHub.Client/ZooHub.Client.csproj
+- name: zoohubServer
+  project: ZooHub.Grpc/ZooHub.Grpc.csproj

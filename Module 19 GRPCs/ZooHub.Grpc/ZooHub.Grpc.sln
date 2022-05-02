@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooHub.Grpc", "ZooHub.Grpc\ZooHub.Grpc.csproj", "{CF686F2E-984F-470F-BF99-00834F8ED556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooHub.Client", "ZooHub.Client\ZooHub.Client.csproj", "{B2200944-3EE3-4AC6-9F2A-F2E5BF0E7376}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{201C6390-E89C-4CCD-B357-B81873A28C71}"
+	ProjectSection(SolutionItems) = preProject
+		tye.yaml = tye.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF686F2E-984F-470F-BF99-00834F8ED556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF686F2E-984F-470F-BF99-00834F8ED556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF686F2E-984F-470F-BF99-00834F8ED556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF686F2E-984F-470F-BF99-00834F8ED556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2200944-3EE3-4AC6-9F2A-F2E5BF0E7376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2200944-3EE3-4AC6-9F2A-F2E5BF0E7376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2200944-3EE3-4AC6-9F2A-F2E5BF0E7376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2200944-3EE3-4AC6-9F2A-F2E5BF0E7376}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6676FE91-964A-44CE-8D98-FF30F38B9034}
+	EndGlobalSection
+EndGlobal
