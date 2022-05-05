@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrutorDecorator.Api", "ScrutorDecorator.Api\ScrutorDecorator.Api.csproj", "{F6C4EB51-1754-48F1-A929-88A795457DA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastleDynamicProxy.Api", "CastleDynamicProxy.Api\CastleDynamicProxy.Api.csproj", "{17895812-9AE5-4FE9-868F-29A85738452B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherCore", "WeatherCore\WeatherCore.csproj", "{04A19D0D-CFC6-4D10-A4AB-56C423C9BC9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6C4EB51-1754-48F1-A929-88A795457DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C4EB51-1754-48F1-A929-88A795457DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C4EB51-1754-48F1-A929-88A795457DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C4EB51-1754-48F1-A929-88A795457DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17895812-9AE5-4FE9-868F-29A85738452B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17895812-9AE5-4FE9-868F-29A85738452B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17895812-9AE5-4FE9-868F-29A85738452B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17895812-9AE5-4FE9-868F-29A85738452B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A19D0D-CFC6-4D10-A4AB-56C423C9BC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A19D0D-CFC6-4D10-A4AB-56C423C9BC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A19D0D-CFC6-4D10-A4AB-56C423C9BC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A19D0D-CFC6-4D10-A4AB-56C423C9BC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
