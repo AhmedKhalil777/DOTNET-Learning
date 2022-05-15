@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RemoteSample.Lib
 {
-    internal class RemotlyCreatedObject
+    internal class RemotelyCreatedObject
     {
         public int RefCount;
         public object Value { get; set; }

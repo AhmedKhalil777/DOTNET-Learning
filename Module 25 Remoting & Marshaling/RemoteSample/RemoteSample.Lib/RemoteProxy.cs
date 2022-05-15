@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using RemoteSample.Lib.Serialization;
+
+using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
@@ -9,10 +13,10 @@ namespace RemoteSample.Lib
 {
     public class RemoteProxy : IDisposable
     {
-        // ID and type of the remote object
-        public Guid ID { get; }
-        public Type Type { get; }
 
+        // ID and type of the remote object
+        public Guid? ID { get; }
+        public Type Type { get; }
 
         // Connection information
         private string RemoteMachineName { get; }
@@ -28,7 +32,6 @@ namespace RemoteSample.Lib
         /// <param name="remoteExecutionServerName">The name of the remote execution server (pipe name)</param>
         /// <param name="parameters">Parameters to pass to the objects constructor</param>
         public RemoteProxy(Type type, string remoteExecutionServerName, object[] parameters) : this(type, ".", remoteExecutionServerName, parameters) { }
-
 
         /// <summary>
         /// Create a new remote proxy for a given type
@@ -56,7 +59,7 @@ namespace RemoteSample.Lib
             };
 
             // Send the command and receive the remote object's ID back
-            ID = SendCommandAsync<Guid>(command).Result;
+            ID = SendCommandAsync<Guid?>(command).Result;
         }
 
         /// <summary>
@@ -90,6 +93,49 @@ namespace RemoteSample.Lib
 
             // Send the command and receive the remote object's ID back
             Type = SendCommandAsync<Type>(command).Result;
+        }
+
+        /// <summary>
+        ///  Prepares named pipe communication with the server
+        /// </summary>
+        private async Task InitializeAsync()
+        {
+            // Setup pipe
+            Pipe = new NamedPipeClientStream(RemoteMachineName, RemoteExecutionServerName, PipeDirection.InOut, PipeOptions.Asynchronous);
+
+            // Connect and set ReadMode
+            await Pipe.ConnectAsync();
+            Pipe.ReadMode = PipeTransmissionMode.Message;
+        }
+
+        /// <summary>
+        /// Invokes a method on the remote object
+        /// </summary>
+        /// <param name="methodName">Name of method to invoke</param>
+        /// <param name="parameters">Method parameters</param>
+        public async Task InvokeAsync(string methodName, params object[] parameters)
+        {
+            await InvokeAsync<object>(methodName, parameters);
+        }
+
+        /// <summary>
+        /// Invokes a method on the remote object
+        /// </summary>
+        /// <typeparam name="T">The expected type of the returned object</typeparam>
+        /// <param name="methodName">Name of method to invoke</param>
+        /// <param name="parameters">Method parameters</param>
+        public async Task<T> InvokeAsync<T>(string methodName, params object[] parameters)
+        {
+            var command = new RemoteCommand
+            {
+                ObjectId = ID,
+                Command = Commands.Invoke,
+                MemberName = methodName,
+                Parameters = parameters,
+                ParametersTypes = parameters?.Select(p => p?.GetType()).ToArray()
+            };
+
+            return await SendCommandAsync<T>(command);
         }
 
         /// <summary>
@@ -197,25 +243,6 @@ namespace RemoteSample.Lib
 
             await SendCommandAsync<object>(command);
         }
-
-
-        /// <summary>
-        ///  Prepares named pipe communication with the server
-        /// </summary>
-        private async Task InitializeAsync()
-        {
-            // Setup pipe
-            Pipe = new NamedPipeClientStream(RemoteMachineName, RemoteExecutionServerName, PipeDirection.InOut, PipeOptions.Asynchronous);
-
-            // Connect and set ReadMode
-            await Pipe.ConnectAsync();
-            Pipe.ReadMode = PipeTransmissionMode.Message;
-        }
-
-
-
-
-
 
         /// <summary>
         /// Sends a command to the remote server
