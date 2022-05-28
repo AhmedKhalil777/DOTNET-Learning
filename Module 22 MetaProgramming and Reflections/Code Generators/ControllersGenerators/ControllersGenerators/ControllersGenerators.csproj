@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<PackageId>ControllersGenerator</PackageId>
+		<LangVersion>preview</LangVersion>
+		<Description>A source generator for creating controllers on the fly using models</Description>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.1" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ControllerGenrratorInterface\ControllersGenerators.Attributes.csproj" />
+
+    </ItemGroup>
+
+
+	<ItemGroup>
+		<Compile Remove="Templates\**\*.cs" />
+		<EmbeddedResource Include="Templates\**\*.cs" />
+		<EmbeddedResource Include="..\ContorllersGenerators.Attributes\*.cs" Link="Templates\Sources\%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(OutputPath)\ContorllersGenerators.Attributes.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(OutputPath)\ContorllersGenerators.Attributes.dll" Pack="true" PackagePath="lib\netstandard2.0" Visible="true" />
+	</ItemGroup>
+
+</Project>
