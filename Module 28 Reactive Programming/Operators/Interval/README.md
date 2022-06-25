@@ -7,14 +7,28 @@
 - The Interval operator returns an Observable that emits an infinite sequence of ascending integers, with a constant interval of time of your choosing between emissions.
 
 ```{c#}
-m_alarmsTimeIntervalSubscription = Observable.Interval(m_bufferTimeSpan).Subscribe(p =>
-{
-    if (m_alarmsLines.Count > 0)
+    public class IntervalInvoker<T>
     {
-        WriteInfluxDbLines(m_alarmsLines);
-        m_alarmsLines.Clear();
-        m_alarmsTimeIntervalSubscription?.Dispose();
-        m_alarmsTimeIntervalSubscription = null;
+        private TimeSpan _waitFor;
+        private Action<List<T>> _action;
+        public List<T> List { get; set; }
+        public IntervalInvoker(double seconds, Action<List<T>> action)
+        {
+            List = new List<T>();
+            _waitFor = TimeSpan.FromSeconds(seconds);
+            _action = action;
+        }
+
+        public void Invoke()
+        {
+            Observable.Interval(_waitFor)
+                .Subscribe(i => {
+                    if (List.Any())
+                    {
+                        _action.Invoke(List);
+                    }
+                    List = new List<T>();
+                });
+        }
     }
-});
 ```
