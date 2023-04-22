@@ -11,7 +11,6 @@ namespace AssemblyBindingRedirects.Console
     {
         static void Main(string[] args)
         {
-            var smaple = new Sample.Assembly.Sample();
             smaple.WhoIsMe();
 
         }
