@@ -67,3 +67,32 @@ c.Xyz(3);
 - `Xyz` not a method inside the Calcualator but compiler doesn't know that no such function. => Build Success, But will have a `runtime` error.
 
 > Even with dynamic C#, type safety is still enforced, only this time it's at runtime 
+
+## dynamic vs var
+- Let's see the 3 examples to know the differences:
+
+Ex1:
+- Static (Compile time) type of d `dynamic`. 
+- runtime will be `string`.
+```{c#}
+dynamic d = "Hi Ahmed";
+```
+
+Ex2:
+- Static (Compile time) type of d `string`. 
+- runtime will be `string`.
+```{c#}
+string d = "Hi Ahmed";
+```
+
+Ex3:
+- Static (Compile time) type of d `string`. 
+- runtime will be `string`.
+```{c#}
+var d = "Hi Ahmed";
+```
+> var = Compiler working out the type.
+
+> dynamic = Runtime working out the type.
+
+
