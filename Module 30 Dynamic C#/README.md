@@ -129,7 +129,7 @@ static void PrintK(dynamic i){
 
 ex:
 
-```{C#}
+```{csharp}
 dynamic value = "March";
 
 // RuntimeBinderException
@@ -152,7 +152,7 @@ static class StringExtensions{
 
 - The runtime can not resolve the interfaces defined by object calls so  `RuntimeBinderException` will be thrown eg. 
 
-```{C#}
+```{Csharp}
 
 IBird bird = new Sparrow {};
 
@@ -178,6 +178,5 @@ public class Sparrow : IBird {
 - Consuming Void method in Static => Compiler error
 - But the compiler can call it dynamic so in runtime also will have `RuntimeBinderException`
 
-
-
-
+## ExpandoObject
+- General Purpose class, found in `System.Dynamic` , similar to dictionary with `string` based keys, and keys added dynamically (not by string), used to improve readability, and Reduce the magic string  
