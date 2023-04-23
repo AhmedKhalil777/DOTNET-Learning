@@ -122,5 +122,62 @@ static void PrintK(dynamic i){
 
 - in 2 cases the overload of PrintK(int i) will be called, runtime knows that in 2 cases are integer.
 
+## Limitation of callable methods
+
+### Extension Methods
+- Extension methods can not be called from `dynamic`, `RuntimeBinderException` will be thrown.
+
+ex:
+
+```{C#}
+dynamic value = "March";
+
+// RuntimeBinderException
+
+WriteLine(value.PrependName("Ahmed"));
+
+
+// But it can be called with Static calling
+WriteLine(StringExtensions.PrependName(value,"Ahmed"));
+
+static class StringExtensions{
+  public static string PrependName(this string str, string name){
+    return $"{name} {str}";
+  }
+
+}
+```
+
+### Explicitly implemented Interfaces members
+
+- The runtime can not resolve the interfaces defined by object calls so  `RuntimeBinderException` will be thrown eg. 
+
+```{C#}
+
+IBird bird = new Sparrow {};
+
+dynamic dBird = bird;
+
+// RuntimeBinderException
+
+bird.Fly();
+
+public interface IBird {
+  void Fly();
+}
+
+public class Sparrow : IBird {
+  public void IBird.Fly(){
+    WriteLine("I am Flying");
+  }
+}
+```
+
+### Consuming Void Method
+
+- Consuming Void method in Static => Compiler error
+- But the compiler can call it dynamic so in runtime also will have `RuntimeBinderException`
+
+
 
 
