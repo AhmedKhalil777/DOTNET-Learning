@@ -96,3 +96,31 @@ var d = "Hi Ahmed";
 > dynamic = Runtime working out the type.
 
 
+## Runtime method resolution
+
+- the runtime choose the method based on type overload, the runtime knows that no `dynamic` as it resolves it, so if you have tow overloads one recieving `int` and the second recieving `dynamic` as shown in next example:
+
+```{C#}
+
+int i = 23;
+PrintK(i);
+
+dynamic d = 22;
+
+PrintK(d);
+
+static void PrintK(int i){
+    WriteLine($"Print(int i) is printing {i}");
+}
+
+static void PrintK(dynamic i){
+    WriteLine($"Print(dynamic i) is printing {i} with type = {i.GetType()}");
+}
+
+
+```
+
+- in 2 cases the overload of PrintK(int i) will be called, runtime knows that in 2 cases are integer.
+
+
+
