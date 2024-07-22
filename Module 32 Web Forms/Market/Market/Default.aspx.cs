@@ -1,23 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Market;
 using System;
-using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Diagnostics;
-using System.Drawing;
-using System.EnterpriseServices.CompensatingResourceManager;
-using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime;
-using System.Security.Cryptography;
-using System.Web;
-using System.Web.Providers.Entities;
 using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using static System.Net.Mime.MediaTypeNames;
 
 
 
@@ -173,8 +161,10 @@ public partial class _Default : Page
 
     [WebMethod]
     [ScriptMethod(UseHttpGet = true)]
-    public static List<Mobile> GetMobileList()
+    public static List<Product> GetProductsList()
     {
-        return new List<Mobile> { new Mobile { ModelName = "IPhone", Price = 21313 } };
+        var context = new WinFormsDbEntities1();
+        return context.Products.ToList();
     }
+
 }

@@ -1,22 +1,22 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     <br />
 <button type="button" id="SayHello">Say Hello</button>
 
 <br /><br /><br />
-<button type="button" id="GetMobileList">Get Mobile List</button>
-
-<br /><br /><br />
+<button type="button" id="GetProductsList">Get Mobile List</button>
+    <br /><br />
     <button type="button" id="UpdateMobilePrice">Update Mobile Price</button>
-
 <br /><br /><br />
-<table class="tblMobileList table">
+<table class="tblProductList table">
     <thead>
         <tr>
             <th>
                 <b>Name</b>
+            </th>  
+            <th>
+                <b>Factory Name</b>
             </th>
             <th>
                 <b>Price</b>
@@ -26,6 +26,7 @@
     <tbody>
         <tr>
             <td><span class="name"></span></td>
+            <td><span class="factory name"></span></td>
             <td><span class="price"></span></td>
         </tr>
     </tbody>
@@ -53,10 +54,10 @@
         });
     });
 
-    $("#GetMobileList").click(function () {
+    $("#GetProductsList").click(function () {
         $.ajax({
             type: "GET", //GET
-            url: "Default.aspx/GetMobileList",
+            url: "Default.aspx/GetProductsList",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
@@ -71,13 +72,14 @@
         });
     });
 
-    function DrawTable(mobiles) {
-        $.each(mobiles, function (i, item) {
+    function DrawTable(products) {
+        $.each(products, function (i, item) {
             var $tr = $('<tr>').append(
 
-                $('<td>').text(item.ModelName),
+                $('<td>').text(item.Name),
+                $('<td>').text(item.FactoryName),
                 $('<td>').text(item.Price),
-            ).appendTo('.tblMobileList')
+            ).appendTo('.tblProductList')
         });
     }
 </script>

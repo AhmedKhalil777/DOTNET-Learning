@@ -4,6 +4,7 @@ using Microsoft.Owin.Security;
 using System.Web;
 using System;
 using Market;
+using System.Data.Entity;
 
 namespace Market
 {
@@ -18,7 +19,10 @@ namespace Market
             : base("DefaultConnection")
         {
         }
+        public virtual DbSet<Product> Products { get; set; }
+
     }
+
 
     #region Helpers
     public class UserManager : UserManager<ApplicationUser>
