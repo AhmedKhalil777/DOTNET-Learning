@@ -7,25 +7,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Learning.OData.Controllers
 {
-    public class CustomersController : ODataController
+    public class CatalogsController : ODataController
     {
+
         private readonly AppDbContext _context;
 
-        public CustomersController(AppDbContext context)
+        public CatalogsController(AppDbContext context)
         {
             _context = context;
         }
 
         [EnableQuery]
-        public ActionResult<IQueryable<Customer>> Get()
+        public ActionResult<IQueryable<Catalog>> Get()
         {
-            return Ok(_context.Customers.Include(x=> x.Orders));
+            return Ok(_context.Catalogs.Include(x=> x.Images));
         }
 
         [EnableQuery]
-        public ActionResult<Customer> Get([FromRoute] int key)
+        public ActionResult<Catalog> Get([FromRoute] int key)
         {
-            var item = _context.Customers.SingleOrDefault(d => d.Id.Equals(key));
+            var item = _context.Catalogs.SingleOrDefault(d => d.Id.Equals(key));
 
             if (item == null)
             {

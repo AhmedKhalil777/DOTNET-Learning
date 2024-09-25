@@ -6,6 +6,6 @@
 
         public string Name { get; set; } = default!;
 
-        public List<Order> Orders { get; set; } = default!;
+        public ICollection<Order> Orders { get; set; } = default!;
     }
 }
