@@ -8,6 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()   // Allow all origins
+                   .AllowAnyMethod()   // Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
+                   .AllowAnyHeader();  // Allow all headers
+        });
+});
 var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntityType<Order>();
 modelBuilder.EntityType<Resource>();
@@ -18,6 +28,8 @@ builder.Services.AddControllers().AddOData(o =>
             o.Select().Filter().OrderBy()
             .Expand().Count().SetMaxTop(null).AddRouteComponents("odata", modelBuilder.GetEdmModel()));
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 app.UseRouting();
 
 app.MapGet("/", () => "Hello World!");
