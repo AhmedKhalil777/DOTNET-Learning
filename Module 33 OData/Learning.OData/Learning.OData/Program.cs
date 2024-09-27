@@ -49,7 +49,7 @@ if (dbContext.Database.EnsureCreated())
         .RuleFor(x => x.StockCount, x => x.Random.Int(0, 100))
         .RuleFor(x => x.Images, x => Enumerable.Range(0, x.Random.Int(1, 10)).Select(y => new Resource
         {
-            Path = x.Image.PlaceImgUrl()
+            Path = x.Image.PicsumUrl()
             
         }).ToList());
 

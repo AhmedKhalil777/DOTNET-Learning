@@ -26,7 +26,7 @@ namespace Learning.OData.Controllers
         [EnableQuery]
         public ActionResult<Catalog> Get([FromRoute] int key)
         {
-            var item = _context.Catalogs.SingleOrDefault(d => d.Id.Equals(key));
+            var item = _context.Catalogs.Include( x=> x.Images).SingleOrDefault(d => d.Id.Equals(key));
 
             if (item == null)
             {
